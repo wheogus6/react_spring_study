@@ -1,6 +1,6 @@
 import React from 'react';
 import {Routes, Route, Link} from 'react-router-dom'
-import './App.css';
+import './assets/css/App.css';
 import Home from "./pages/Home";
 import Counter from "./pages/Counter"
 import Input from "./pages/Input"

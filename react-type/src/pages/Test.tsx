@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
-type TestData = {
-    text: string;
-    number: number;
-};
+import {TestData} from "../types/TestData";
 
 function Test() {
 

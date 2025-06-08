@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import {TestData} from "../types/TestData";
+import { fetchTestData } from '../services/TestService';
 
 function Test() {
 
     const [data, setData] = useState<TestData | null>(null);
 
     useEffect(() => {
-        fetch("/front/user/test", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-            .then((res) => res.json())
-            .then((json) => setData(json))
+        fetchTestData()
+            .then(setData)
             .catch((err) => console.log("error : ", err));
     }, []);
 

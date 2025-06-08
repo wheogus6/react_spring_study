@@ -1,7 +1,14 @@
 import React from 'react';
 
 
-function User({userData}) {
+type UserProps = {
+    userData: {
+        email: string,
+        name: string
+    }
+}
+
+function User({ userData }: UserProps) {
     return (
         <tr>
             <td>{userData.name}</td>

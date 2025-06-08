@@ -1,10 +1,9 @@
-const express = require('express');
-const axios = require("axios");
-const app = express();
+import express, { Request, Response } from 'express';
+import axios from 'axios';
 
 const router = express.Router();
 
-router.post("/test", async (req, res) => {
+router.post("/test", async (req: Request, res: Response) => {
     try {
         const response = await axios.post("http://localhost:8080/api/test");
         res.json(response.data);
@@ -13,4 +12,4 @@ router.post("/test", async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

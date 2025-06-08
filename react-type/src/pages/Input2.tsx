@@ -9,7 +9,7 @@ function Input2() {
 
     const {name, email, tel} = inputs;
 
-    function onChange(e) {
+    function onChange(e: React.ChangeEvent<HTMLInputElement>) {
         const value = e.target.value;
         const id = e.target.id;
         setInputs({

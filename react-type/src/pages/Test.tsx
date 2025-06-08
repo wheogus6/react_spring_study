@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
+type TestData = {
+    text: string;
+    number: number;
+};
+
 function Test() {
 
-    const [data, setData] = useState(null);
+    const [data, setData] = useState<TestData | null>(null);
 
     useEffect(() => {
         fetch("/front/user/test", {
@@ -25,7 +30,7 @@ function Test() {
             <p>{data.number}</p>
             {/*<pre>{JSON.stringify(data, null, 2)}</pre>*/}
         </div>
-    )
+    );
 }
 
 export default Test;

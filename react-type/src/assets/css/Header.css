@@ -1,0 +1,22 @@
+.header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.header nav a {
+    margin-right: 16px;
+    color: #555;
+    text-decoration: none;
+}
+
+.header nav a:last-child {
+    margin-right: 0;
+}

@@ -15,7 +15,7 @@ import ProductService from "../services/ProductService";
 
 const ProductDetail = () => {
 
-    const { id } = useParams<{ id: number }>();
+    const { id } = useParams<{ id : string}>();
     const [product, setProduct] = useState<ProductType | null>(null);
 
     useEffect(() => {

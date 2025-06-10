@@ -16,7 +16,7 @@ async function getProductList(): Promise<ProductType[]> {
     return data;
 }
 
-async function getProductDetail(id: number): Promise<ProductType> {
+async function getProductDetail(id: string): Promise<ProductType> {
     const res = await fetch(`/api/product/getProductDetail`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

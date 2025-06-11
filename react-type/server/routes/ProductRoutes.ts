@@ -12,10 +12,13 @@ router.post("/getProductList", async (req: Request, res: Response) => {
     }
 });
 
-router.post("/getProductDetail", async (req: Request, res: Response) => {
-    const { id } = req.body;  // 클라이언트가 보낸 id 추출
+router.post("/getProductDetail", express.text(), async (req: Request, res: Response) => {
+    // 클라이언트가 보낸 id 추출
+    const id = req.body;
     try {
-        const response = await axios.post("http://127.0.0.1:8080/api/product/getProductDetail", { id });
+        const response = await axios.post("http://127.0.0.1:8080/api/product/getProductDetail",  id,
+            {headers: { "Content-Type": "text/plain" }}
+        );
         res.json(response.data);
     } catch (error) {
         console.error(error);

@@ -19,8 +19,10 @@ async function getProductList(): Promise<ProductType[]> {
 async function getProductDetail(id: string): Promise<ProductType> {
     const res = await fetch(`/api/product/getProductDetail`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id }),
+        // headers: { "Content-Type": "application/json" },
+        // body: JSON.stringify({ id }),
+        headers: { "Content-Type": "text/plain" },
+        body: id,
     });
     if (!res.ok) throw new Error("상세 조회 실패");
     return await res.json();
